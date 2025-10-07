@@ -1,23 +1,16 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import InputForm from './components/InputForm';
+import ResultsCard from './components/ResultsCard';
 
 function App() {
+  const [result, setResult] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <h1>Invoicing ROI Simulator</h1>
+      <InputForm setResult={setResult} />
+      <ResultsCard result={result} />
     </div>
   );
 }
